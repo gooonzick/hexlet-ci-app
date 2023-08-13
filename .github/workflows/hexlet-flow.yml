@@ -14,9 +14,6 @@ jobs:
       - name: Setup app
         run: make setup
 
-      - name: Start app
-        run: make start
-
       - name: Run linter
         run: make lint
 
