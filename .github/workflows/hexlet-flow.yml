@@ -1,0 +1,24 @@
+name: hexlet-workflow
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ">=18"
+
+      - name: Setup app
+        run: make setup
+
+      - name: Start app
+        run: make start
+
+      - name: Run linter
+        run: make lint
+
+      - name: Run tests
+        run: make test
